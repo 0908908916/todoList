@@ -1,0 +1,155 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+i {
+    pointer-events: none;  // 這樣就點不到這個 i 了 就只會出現 js 的 button
+}
+
+
+// linear-gradient 設定顏色有漸層感 可以參閱網路上程式碼 有各種  deg 調整角度
+body {
+    background: linear-gradient(90deg, rgb(84, 130, 255), rgb(100, 255, 134));
+}
+
+header {
+    height: 20vh;
+    // 把文字用到中間
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    h1 {
+        color: white;
+        font-size: 3rem;
+    }
+
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    input,button {
+        border: none;  // 不要有任何外框
+        padding: 0.25rem 0.5rem;
+        font-size: 1.75rem;
+        margin: 0.1rem;
+
+    }
+    // 要把月 日 變的上下按鈕移除 網頁上找 input number arrows remove 裡面有 wc3 school 方法
+    // 用鍵盤還是可以調整 月 日 數
+    input[type="number"] {
+        width: 50px;   // 設定使用者輸入的寬度
+        text-align: center;  // 文字到中間
+    }
+
+    // 以下是消除按鈕 網路上找的 兩種
+    /* Chrome, Safari, Edge, Opera */
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    /* Firefox */
+    input[type="number"] {
+        -moz-appearance: textfield;
+    }
+
+
+    button {
+        cursor: pointer;  // 滑鼠游標移上去有個小手圖案
+        background-color: green;
+        color: wheat;
+    }
+}
+
+
+section {
+    display: flex;  // 讓他在中間來
+    flex-direction: column; // 直式的
+    align-items: center;  //  有一方塊 方塊中直列的到中間那一格 
+
+    div.todo {
+        width: 30vw;  // 設定寬度
+        display: flex;  // 設定他是橫的
+        align-items: center;
+        margin: 0.2rem 0rem;   // 上下 0.2 左右 0
+        transition: all 0.1s ease; // 設定跑全部跑動畫 花 0.1 秒達到它的效果
+
+        p {
+            background-color: white;
+            color: black;
+            padding: 0.25rem 0.5rem;  // 上下 0.25 左右 0.5
+            font-size: 1.75rem;
+        }
+
+        p.todo-text {
+            width: 50%;
+            text-align: center;
+        }
+
+        button {     // 設定垃圾桶跟打勾 的樣式
+            padding: 0.25rem 0.5rem;
+            font-size: 1.75rem;
+            border: none;
+            cursor: pointer;  // 游標移過去 一個小手的圖案
+            color: wheat;  // 圖案設定白色
+
+        }
+
+        button.complete {
+            background-color: rgb(100, 255, 134); // 背景打勾勾
+        }
+
+        button.trash {
+            background-color: rgb(202, 41, 41);  // 背景垃圾桶
+        }
+    }
+
+}
+
+// 按下去排列的按鈕
+div.sort {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0rem;
+
+    button {
+        padding: 0.25rem 0.5rem;
+        font-size: 1.75rem;
+        border: none;
+        cursor: pointer;  // 滑鼠游標移上去有個小手圖案
+        background-color: green;
+        color: wheat;
+    }
+}
+
+.done {
+    opacity: 0.5;  // 透明度
+    text-decoration: line-through;  // 字中間出現一條線
+    text-decoration-thickness: 0.2rem;  // 字的粗度
+}
+
+// 設定動畫 輸入完之後 會由小到大在下面出現
+@keyframes scaleUp {
+    from {
+        transform: scale(0);   // 記得一定要打 from 不會報錯
+    }
+    to {
+        transform: scale(1);   // scale 0 ~ 1
+    }
+}
+// 垃圾桶動畫 直接退到 0
+
+@keyframes scaleDown {
+    to {
+        transform: scale(0); 
+    }
+}
+

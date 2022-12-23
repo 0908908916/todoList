@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo List</title>
+    <link rel="stylesheet" href="./style.css" />
+    <!-- 用打勾圖案 跟垃圾桶 的標籤圖案 要到 https://cdnjs.com/libraries/font-awesome/6.2.1 這個網址 複製他的 第一個 有圖標 copy link tag  網站的 標誌性的 SVG、字體和 CSS 工具包 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <h1>Jie jing Todo List</h1>
+    </header>
+    
+    <form>
+        <input type="text">  <!--寫文字的地方 -->
+        <input type="number" min="1" max="12" placeholder="M" required> <!--輸入月份 -->
+        <input type="number" min="1" max="30" placeholder="D" required>  <!--輸入日期 -->
+        <button type="submit">Add into List</button>
+
+    </form>
+
+    <br /> <!-- 加空格 -->
+    <br />
+
+    <div class="sort">
+        <button>Sort By Time</button>    <!-- 根據時間做排列 這個按鈕會由小到大排下來 -->
+    </div>
+
+    <section></section>    <!-- 點 Add into List 下去一瞬間 就會把新增東西放在 section -->
+</body>
+<script src="./app.js"></script>
+</html>
